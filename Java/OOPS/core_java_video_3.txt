@@ -17,6 +17,38 @@ Theorey
 
 Test Case 1
 Theorey(Test case 1)
+
+Conclusion:-
+In overloading compiler is responsible to perform method resolution(decision) based on the reference type(but not based on run time
+object). Hence overloading is also considered as compile time polymorphism(or) static polymorphism (or)early biding.
+
+See Example for Overloading with Parent and Child class exmaples.
+
+Example 1:-
+------------
+class Parent{
+    void m1(int x){
+        sop("Parent m1 x int");
+    }
+    void m1(long x){
+        sop("Parent m1 x long");
+    }
+}
+
+class Child extends Parent{
+ void m1(int x){
+        sop("Child m1 x int");
+    }
+}
+
+class Test{
+    public static void main(String [] args){
+        Parent p=new Child();
+        p.m1(10)
+    }
+}
+
+Check above example for testing.
 *******************************End of Example 1***************************************
 Example 2
 Theorey
