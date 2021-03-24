@@ -56,9 +56,47 @@ Ex:-Attendar and Collector Level.
 Example 2
 Theorey
 
+In overloading method resolution is always takes care by compiler based on reference type.
+Runtime object won't play any role in overloading.
 
 Test Case 2
 Theorey(Test case 2)
+
+Case 6:-
+--------
+class Animal()
+class Monkey extends Animal{}
+
+class Test{
+
+    public void methodOne(Animal a){
+            System.out.println(" Animal Version ");
+    }
+
+    public void methodOne(Monkey m){
+         System.out.println(" Monkey Version ");
+    }
+
+    public static void main(String[] args){
+        Test t=new Test();
+
+        // a)
+        Animal a =new Animal();
+        // Here reference variable is a,its type is Animal.
+        t.methodOne(a);  //  Animal Version
+
+         // b)
+        Monkey m =new Monkey();
+        // Here reference variable is b,its type is Monkey.
+        t.methodOne(m);  //  Monkey Version
+        
+        // c)
+        Animal am =new Monkey();
+        // Here reference variable is am,its type is Animal. so method with Animal type as argument will get the chance..
+        t.methodOne(am);  //  Animal Version
+
+    }
+}
 *******************************End of Example 2***************************************
 Example 3
 Theorey
