@@ -1,102 +1,68 @@
-Date :- 19/ 03/2021 
-Topic:- 
-1)OverLoading
-a)Automatic Promotion in Overloading(189)
+Date :- 25/03/2021
+Topic:- OverRiding Concept
+a)
 Video Number:- 
-Completed:- YES
-Resources Completed:-   
+Completed:- 17:15
+Resources Completed:- 
 Github:- 
-PDF:-   188-
+PDF:- 192
 Notes:- 
 *****************************************************************************************
 Example 1
 Theorey
-High Priority
+OverRidden Method and OverRiding Method.
+
+
 
 Test Case 1
-class Test{
-    public void methodOne(String s){
-            sopln("String Version");
-    }
+Theorey(Test case 1)
 
-    public void methodOne(Object o){
-            sopln("String Version");
+class Parent{
+    public void methodTest(){
+        System.out.println("OverRidden Method"); // OverRidden Method
     }
-
-    public static void main(String [] args){
-        Test t=new Test(); 
-        t.methodOne("arun");//String version
-        t.methodOne(new Object());//Object version
-        t.methodOne(null);//String version
+}
+class Child extends Parent{
+     public void methodTest(){
+        System.out.println("OverRiding Method"); // OverRiding Method
     }
 }
 
-Theorey(Test case 1)
+class Test{
+    public static void main(String[] args){
+        
+        a)
+        Parent p=new Child();
+        p.methodTest();
 
-t.methodOne(null);//String version
 
-null is valid value for reference data types.
-i.e String and Object.
+        Compiler Role.
+        a)Parent reference can be used to hold child objects so no syntax error.
+        b) p.methodTest();// In this line compiler will check  methodTest() is avaliable in Parent class.Its avaliable as per the example so no error till now..
+
+        Run Time
+        a)JVM will check.  
+            Wheather the reference is holding Parent Object or Child Object.
+            if its a parent object.(No test case needs to be handled.i.e Parent p=new Parent(); Parent specific method will get the chance.)
+            if its a child object.
+            i.e  Parent p=new Child();
+                 p.methodTest();
+            then JVM  will check in the child class methodTest is OverRiding or not.
+            If its OverRiding in child class then child class method will get the chance.
+            If its not OverRiding then parent method will get the chance..
+    }
+}
 
 
-
-While resolving overloaded methods exact match will always get high priority,
-While resolving overloaded methods child class will get the more priority than parent
-
-Object 
-    |---String
-    |---String Buffer
-
-Object is parent class.
-String and String/String buffer are the Child class.
-
-Ex:-Attendar and Collector Level.
-
+Note:-Parents reference can be used to hold child class objects.Using that reference we can call method avaliable in parent class.
+we cannot call child specific methods.
 *******************************End of Example 1***************************************
 Example 2
 Theorey
 
-In overloading method resolution is always takes care by compiler based on reference type.
-Runtime object won't play any role in overloading.
 
 Test Case 2
 Theorey(Test case 2)
-
-Case 6:-
---------
-class Animal()
-class Monkey extends Animal{}
-
-class Test{
-
-    public void methodOne(Animal a){
-            System.out.println(" Animal Version ");
-    }
-
-    public void methodOne(Monkey m){
-         System.out.println(" Monkey Version ");
-    }
-
-    public static void main(String[] args){
-        Test t=new Test();
-
-        // a)
-        Animal a =new Animal();
-        // Here reference variable is a,its type is Animal.
-        t.methodOne(a);  //  Animal Version
-
-         // b)
-        Monkey m =new Monkey();
-        // Here reference variable is b,its type is Monkey.
-        t.methodOne(m);  //  Monkey Version
-        
-        // c)
-        Animal am =new Monkey();
-        // Here reference variable is am,its type is Animal. so method with Animal type as argument will get the chance..
-        t.methodOne(am);  //  Animal Version
-
-    }
-}
 *******************************End of Example 2***************************************
 Example 3
 Theorey
