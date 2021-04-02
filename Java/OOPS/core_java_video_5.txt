@@ -2,7 +2,7 @@ Date :- 25/03/2021
 Topic:- OverRiding Concept
 a)
 Video Number:- 
-Completed:- 17:15
+Completed:- YES
 Resources Completed:- 
 Github:- 
 PDF:- 192
@@ -60,9 +60,20 @@ we cannot call child specific methods.
 Example 2
 Theorey
 
+Covariant Return Types in OverRiding.
+
+
+Parent                  Objet                                  Number                     double                            String
+
+
+                        (valid)                               (valid)                     (invalid)                      (invalid)
+Child           Object/String/StringBuffer                  Number/Integer                   int                            Object
+
+
 
 Test Case 2
 Theorey(Test case 2)
+
 *******************************End of Example 2***************************************
 Example 3
 Theorey
