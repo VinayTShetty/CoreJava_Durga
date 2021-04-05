@@ -1,28 +1,138 @@
-Date :- / /2021 
+Date :- 05/04/2021 
 Topic:- 
-Video Number:- 
-Completed:- 
+Video Number:- Video 6
+Completed:- YES
 Resources Completed:- 
+
+OverRiding Rules
+----------------
+1)Exception.
+2)Static KeyWord
+
 Github:- 
-PDF:- 
+PDF:- 196
 Notes:- 
 *****************************************************************************************
 Example 1
-Theorey
+Theorey:- while overRiding the scope of the acesss modifier should not be reduced.
+Internal Reason.
+
+
+
+class Parent{
+    public void m1(){
+        System.out.println("Parent_implementation)
+    }
+}
+class Child extends Parent{
+
+}
+
+class Test {
+    public void main(String [] args){
+        Parent p=new Child();
+        p.m1():// Parent_implementation
+    }
+}
+
+Suppose assume 100 people are using m1() method implementation.
+In future we override m1() method in child class for different implementation like below.
+
+class Parent{
+    public void m1(){
+        System.out.println("Parent_implementation)
+    }
+}
+class Child extends Parent{
+ public void m1(){
+        System.out.println("Child_implementation)
+    }
+}
+
+class Test {
+    public void main(String [] args){
+        Parent p=new Child();
+        p.m1():// Child_implementation
+    }
+}
+
+Now Child class method will get executed  for those 100 people.
+Suppose if we make that method as default/private all those 100 people acesssing the method will get effected.
+To reduce that problem scope of the acess modifier should not be reduced in overRiding.
 
 
 Test Case 1
 Theorey(Test case 1)
 *******************************End of Example 1***************************************
 Example 2
-Theorey
+Theorey:-
+While overriding if the child class method throws any checked exception compulsory the parent class method should throw the same checked exception or its parent
+otherwise we will get compile time error.
 
+Internal Reason.
+----------------
+
+
+class Parent{
+    public void m1() throws IOException{
+        System.out.println("Parent_implementation)
+    }
+}
+class Child extends Parent{
+
+}
+
+class Test {
+    public void main(String [] args){
+        try{
+            Parent p=new Child();
+            p.m1():// Parent_implementation
+        }catch(IOException e){}
+    }
+}
+
+1)If a method throws a exception then caller is responsible to handle it.
+Here m1() method throws a exception.so caller is responsible to handle the exception using try-catch block
+
+2)Suppose 1000 people are acesssing this method.so all the people are responsible for handling IOException exception.
+In future we override the method in Child class and all the users will get Child class method implementation.
+
+Supoose if the child class throws different exception,then all the previous caller needs to handle different exception.
+so to avoid this mishaps we use this rule.
 
 Test Case 2
 Theorey(Test case 2)
 *******************************End of Example 2***************************************
 Example 3
 Theorey
+
+overRiding with respect to static method.
+-----------------------------------------
+
+class Parent{
+    public static void m1(){
+        System.out.println("Parent_implementation)
+    }
+}
+class Child extends Parent{
+ public  void m1(){
+        System.out.println("Parent_implementation)
+    }
+}
+
+class Test {
+    public void main(String [] args){
+        Parent p=new Child();
+        p.m1()://Parent_implementation
+    }
+}
+
+m1() is static method in Parent:- static method means class level method.
+m1() is not-static in child:-Its a instance method,its related to the Object level.
+
+Example:- If a faculty of Software Department(Asst Professor) is leaving the orgaisation we need to recurit the another faculty of Software Department only.
+We cannot recurit Student attending college for this post.Vice Versa if student is leaving.
+
 
 
 Test Case 3
