@@ -11,11 +11,75 @@ Example 1
 Theorey
 
 
+
+List l=new ArrayList();This representation is similar to ----> Parent p=new Child();
+
+Here List is holding child class objects.
+List l=new ArrayList();
+List l=new LinkedList();
+List l=new Stack();
+List l=new Vector();
+
+Parent class reference can be used to hold child objects.
+But by using that reference we can call only the methods avaliable in Parents class,And we can t call child specific methods.
+
+Approach:-
+
+If we don t know exact Run Time Object,then we should go for Parent p=new Child();
+Suppose we are adding Hetrogenous objects in the ArrayList.
+In Run time trying to fetch nth index object.
+But we don t know exactly wat kind of object is there in the index of the arrayList.
+In these scenario we will use Parent p=new Child();
+
+
+Example 1:-
+ArrayList<objects> arrayListHoldert=new ArrayList<objects>();
+arrayList.add(new Student());
+arrayList.add(new Customer());
+arrayList.add(new Company());
+
+Object o=arrayListHoldert.get(0); //----> Parent p=new Child();
+
+Example 2:-
+Suppose we have a method returning eiether ArrayList/Stack/LinkedList/Vector.
+
+private _____ m1(){
+
+    return ArrayList/Stack/LinkedList/Vector;
+}
+
+Solution:-
+
+private List m1(){
+
+    return ArrayList/Stack/LinkedList/Vector;
+}
+
+List list=m1();
+
+Advantage:-
+1)By using parent reference we can call only method available in parent class and child specific method we can't call.
+2)We can use parent reference to hold any child class Objects.
+
+
 Test Case 1
 Theorey(Test case 1)
 *******************************End of Example 1***************************************
 Example 2
 Theorey
+
+ArrayList arrayList=new ArrayList();
+2)Child c=new Child()
+Using Child reference we can call both parent and child class methods.
+
+Approach:-
+If we know exact runtime type of Object then we should go for Child c=new Child() approach.
+
+Advantage:-
+By using child reference we can call both parent & child calss methods.
+
+DisAdvantage:-
+We can use child reference to hold only child class objects.
 
 
 Test Case 2
