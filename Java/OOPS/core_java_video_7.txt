@@ -1,7 +1,7 @@
 Date :- 02/05/2021 
 Topic:- 
 Video Number:- Video 7
-Completed:- NO(1:00:00)
+Completed:- YES
 Resources Completed:- 
 Github:- 
 PDF:- 
