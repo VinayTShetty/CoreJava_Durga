@@ -1,10 +1,11 @@
 Date :- 21/05/2021 
 Topic:- 
 Video Number:- 8
-Completed:- 
+Completed:- YES
 Resources Completed:- 
 1)Coupling(233)
 2)Object Type Casting(226)
+    a)RunTime Rule During TypeCasting.
 Github:- 
 PDF:- 
 Notes:- 
@@ -41,7 +42,34 @@ Runnable is an interface,Thread is its implemented class.
 
 
 
+Object Type Casting:-
+---------------------
+RunTime Checking JVM Rule.
 
+1)The underlying object type of "d" must be either same (or) derived type of "C" otherwise we will get runtime exception saying ClassCastException.
+    A b=(C)D
+
+RULE:-
+
+ Object o=new String("Bhaskar");
+ StringBuffer sb=(StringBuffer)o;
+    A          b=(C)D;
+    
+ Result:-ClassCastException.
+
+As per the  Rule :-
+The Underlying Object type of D = 'o'(which is the Object reference and its underlying object type is String).
+'C' is of StringBuffer type so,Underlying object type(String) and 'C' type StringBuffer are not 1)Same type,2)Deriveed Type.
+
+
+In Local words:- D referennce variable which holds the Object type(X).
+That Object type 'X' must be eiether same type Or Derived Type of C.
+
+
+Valid Runtime Casting
+---------------------
+Object o=new String("Durga");
+Object o1=(String)o;
 
 
 Test Case 2
