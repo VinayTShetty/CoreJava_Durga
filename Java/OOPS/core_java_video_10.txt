@@ -1,7 +1,7 @@
 Date :- 5/7/2021 
 Topic:- Static control FLow
 Video Number:- Video 10
-Completed:- 30:00
+Completed:- YES
 Resources Completed:- 30:38
 Github:- 
 PDF:- 
@@ -34,7 +34,7 @@ Example 1
 
 
  J Value= 0  // Its value is zero because ,its still in RIWO (Read indirectly write only state)
-First Static Block
+First Static Block  
 Second Static Block
 J Value= 10 // its value is 10 because now its in R&W(Read and Write)
 Main methd
@@ -60,7 +60,7 @@ Theorey
      }
  }
 
-RIWO
+RIWO  ( PDF 217 Example This is w.r.to JVM 1.6 version)
 ----
 If the variable is just idenified and original value not asssigned then the variable is said to be in RIWO state.(Read Indirectly and write only State).
 when the variable is in RIWO state,we can perform Read Operation InDirectly.
