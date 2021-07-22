@@ -1,7 +1,7 @@
 Date :- 21/7/2021 
 Topic:- instance Control Flow.
 Video Number:- 12
-Completed:- 00:31:00
+Completed:- YES
 Resources Completed:- 
 Github:- 
 PDF:- 222
